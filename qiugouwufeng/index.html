@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>求购无缝管-工业管材资源与采购服务平台</title>
+    <meta name="description" content="本站提供无缝管求购信息发布、规格型号查询、材质标准对比及厂家直销资源。涵盖碳钢、合金钢、不锈钢无缝管，支持大口径、厚壁管材询价与采购。">
+    <meta name="keywords" content="求购无缝管,无缝钢管采购,无缝管厂家,大口径无缝管,厚壁无缝管">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f0f4f8;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --accent-color: #ff9800;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--secondary-color);
+            font-size: 0.85rem;
+            color: var(--text-light);
+            padding: 0.5rem 0;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+
+        .cta-btn:hover {
+            background-color: #004494;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0056b3 0%, #003d80 100%);
+            color: #fff;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Search Bar */
+        .search-container {
+            background: #fff;
+            padding: 0.5rem;
+            border-radius: 50px;
+            display: inline-flex;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .search-container input {
+            flex: 1;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-container button {
+            background-color: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 0 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-container button:hover {
+            background-color: #e68900;
+        }
+
+        /* Main Content Grid */
+        .main-content {
+            padding: 3rem 0;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Categories Section */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        .category-card {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0,86,179,0.1);
+            transform: translateY(-2px);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .category-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .category-card p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Specifications Table */
+        .specs-table-wrapper {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--secondary-color);
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            background-color: #e3f2fd;
+            color: var(--primary-color);
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--secondary-color);
+        }
+
+        .contact-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .contact-list li:last-child {
+            border-bottom: none;
+        }
+
+        .contact-list a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .contact-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--secondary-color);
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 3rem 0 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .top-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <span>欢迎来到工业管材采购平台，专注无缝管求购与供应</span>
+                <span>24小时服务热线：400-123-4567</span>
+            </div>
+        </div>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span>管材通</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">无缝管求购</a></li>
+                    <li><a href="#">无缝管厂家</a></li>
+                    <li><a href="#">材质标准</a></li>
+                    <li><a href="#">案例展示</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="cta-btn">发布求购信息</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>无缝管求购与资源对接平台</h1>
+                <p>海量无缝钢管库存，一站式解决大口径、厚壁管材采购需求。提供碳钢、合金钢、不锈钢等多种材质规格，价格透明，发货及时。</p>
+                <div class="search-container">
+                    <input type="text" placeholder="请输入规格，例如：φ219×8 20#无缝管">
+                    <button type="button">立即询价</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container main-content">
+            <div class="grid-layout">
+                <!-- Left Column: Categories & Specs -->
+                <div class="content-column">
+                    
+                    <!-- Categories -->
+                    <section>
+                        <div class="section-title">
+                            <h2>热门材质分类</h2>
+                            <a href="#" style="font-size:0.9rem; color:var(--primary-color);">查看全部 &gt;</a>
+                        </div>
+                        <div class="categories-grid">
+                            <div class="category-card">
+                                <div class="category-icon">🛡️</div>
+                                <h3>20#无缝管</h3>
+                                <p>优质碳素结构钢</p>
+                            </div>
+                            <div class="category-card">
+                                <div class="category-icon">🔩</div>
+                                <h3>16Mn无缝管</h3>
+                                <p>低合金高强度钢</p>
+                            </div>
+                            <div class="category-card">
+                                <div class="category-icon">⚡</div>
+                                <h3>Q345B无缝管</h3>
+                                <p>建筑结构用钢</p>
+                            </div>
+                            <div class="category-card">
+                                <div class="category-icon">🧲</div>
+                                <h3>不锈钢管</h3>
+                                <p>304/316L材质</p>
+                            </div>
+                            <div class="category-card">
+                                <div class="category-icon">🌊</div>
+                                <h3>高压锅炉管</h3>
+                                <p>GB/T 5310标准</p>
+                            </div>
+                            <div class="category-card">
+                                <div class="category-icon">🏗️</div>
+                                <h3>地质钻探管</h3>
+                                <p>SY/T标准</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Specs Table -->
+                    <section style="margin-top: 3rem;">
+                        <div class="section-title">
+                            <h2>常见规格参考</h2>
+                        </div>
+                        <div class="specs-table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>外径 (mm)</th>
+                                        <th>壁厚 (mm)</th>
+                                        <th>材质</th>
+                                        <th>标准</th>
+                                        <th>应用场景</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>57</td>
+                                        <td>3.5 - 6</td>
+                                        <td>20# / 16Mn</td>
+                                        <td>GB/T 8163</td>
+                                        <td>液压支架、高压管道</td>
+                                    </tr>
+                                    <tr>
+                                        <td>108</td>
+                                        <td>4 - 12</td>
+                                        <td>Q345B</td>
+                                        <td>GB/T 8163</td>
+                                        <td>输送流体、结构支撑</td>
+                                    </tr>
+                                    <tr>
+                                        <td>219</td>
+                                        <td>6 - 25</td>
+                                        <td>20# / Q345B</td>
+                                        <td>GB/T 8163</td>
+                                        <td>石油输送、工程管道</td>
+                                    </tr>
+                                    <tr>
+                                        <td>325</td>
+                                        <td>8 - 30</td>
+                                        <td>20# / Q345B</td>
+                                        <td>GB/T 8163</td>
+                                        <td>大型机械制造、管道</td>
+                                    </tr>
+                                    <tr>
+                                        <td>426</td>
+                                        <td>10 - 35</td>
+                                        <td>20# / Q345B</td>
+                                        <td>GB/T 8163</td>
+                                        <td>大型工程、输油管道</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <!-- Buying Guide -->
+                    <section style="margin-top: 3rem;">
+                        <div class="section-title">
+                            <h2>采购指南与注意事项</h2>
+                        </div>
+                        <article style="line-height: 1.8; color: var(--text-light);">
+                            <p>在进行<b>求购无缝管</b>时，为确保采购质量与成本控制，建议您重点关注以下几点：</p>
+                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+                                <li><strong>明确材质要求：</strong>确认所需材质牌号（如20#、45#、16Mn等），不同材质的化学成分和机械性能差异较大。</li>
+                                <li><strong>核对标准编号：</strong>无缝管执行标准众多，常见的有GB/T 8163（结构管）、GB/T 8165（低中压锅炉）、GB/T 9948（高压锅炉）等，务必在合同中注明。</li>
+                                <li><strong>检查壁厚与外径：</strong>根据实际工程需求选择公差等级，一般用途选用普通公差，精密设备需选用高精度管。</li>
+                                <li><strong>检测报告：</strong>要求供应商提供材质证明书（炉批号、化学成分、力学性能报告），确保材料可追溯。</li>
+                            </ul>
+                            <p>本平台汇聚了全国多家正规无缝管生产厂家，提供现货库存与定制加工服务，欢迎随时联系我们发布具体规格的求购需求。</p>
+                        </article>
+                    </section>
+                </div>
+
+                <!-- Right Column: Sidebar -->
+                <aside class="sidebar">
+                    <!-- Contact Widget -->
+                    <div class="sidebar-widget">
+                        <h3>快速联系供应商</h3>
+                        <ul class="contact-list">
+                            <li>
+                                <span>现货资源部</span>
+                                <a href="#">询价</a>
+                            </li>
+                            <li>
+                                <span>定制加工部</span>
+                                <a href="#">询价</a>
+                            </li>
+                            <li>
+                                <span>售后服务部</span>
+                                <a href="#">咨询</a>
+                            </li>
+                            <li>
+                                <span>外贸出口部</span>
+                                <a href="#">咨询</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Hot Tags -->
+                    <div class="sidebar-widget">
+                        <h3>热门搜索</h3>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                            <a href="#" class="tag">大口径无缝管</a>
+                            <a href="#" class="tag">厚壁无缝管</a>
+                            <a href="#" class="tag">精密无缝管</a>
+                            <a href="#" class="tag">小口径无缝管</a>
+                            <a href="#" class="tag">不锈钢管</a>
+                            <a href="#" class="tag">高压管</a>
+                            <a href="#" class="tag">流体管</a>
+                        </div>
+                    </div>
+
+                    <!-- Download Guide -->
+                    <div class="sidebar-widget">
+                        <h3>资料下载</h3>
+                        <ul style="font-size: 0.9rem; color: var(--text-light);">
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                                <a href="#">《GB/T 8163-2018标准解读.pdf》</a>
+                            </li>
+                            <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">
+                                <a href="#">《常用无缝管规格对照表.xlsx》</a>
+                            </li>
+                            <li style="padding: 0.5rem 0;">
+                                <a href="#">《采购合同模板.doc》</a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-item">
+                    <h4>1. 求购无缝管需要提供什么具体参数？</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-light);">建议提供外径、壁厚、长度、材质牌号以及执行标准。如果用于特定设备，最好附上图纸或相关技术要求。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>2. 贵司支持定制加工吗？</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-light);">支持。我们拥有专业的切割、坡口加工设备，可按客户图纸进行定尺切割、打孔、车丝等深加工服务。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>3. 现货库存一般有多少？</h4>
+                    <p style="font-size: 0.95rem; color: var(--text-light);">我们常备库存涵盖Φ57至Φ630多个规格，材质以20#、Q345B为主，可满足大部分紧急求购需求。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于管材通</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">专注工业管材行业十余年，致力于为国内外客户提供优质的无缝管求购、销售与技术服务解决方案。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">无缝管求购</a></li>
+                        <li><a href="#">无缝管厂家</a></li>
+                        <li><a href="#">材质标准查询</a></li>
+                        <li><a href="#">最新价格行情</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">网站地图</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul style="font-size: 0.9rem;">
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：sales@guancaitong.com</li>
+                        <li>地址：某某市某某区钢材市场A座101</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 管材通工业材料有限公司 版权所有 | 专注无缝管求购与供应
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
