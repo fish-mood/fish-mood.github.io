@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="比思论坛地址 - 官方导航与社区入口，提供比思论坛最新访问链接、板块分类、注册指南及用户交流服务。">
+    <meta name="keywords" content="比思论坛地址,比思论坛,比思,论坛入口,比思社区,比思导航">
+    <title>比思论坛地址 - 官方社区导航与注册指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: #eff6ff;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 4rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .link-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-box .url {
+            font-family: monospace;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            background: #f1f5f9;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: normal;
+            margin-left: auto;
+            margin-right: 1rem;
+        }
+
+        /* Cards Grid */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            background-color: #eff6ff;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Forum List */
+        .forum-list {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .forum-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.2s;
+        }
+
+        .forum-item:last-child {
+            border-bottom: none;
+        }
+
+        .forum-item:hover {
+            background-color: #f8fafc;
+        }
+
+        .forum-info h3 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .forum-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .forum-stats {
+            text-align: right;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .forum-stats {
+                display: block;
+            }
+        }
+
+        .forum-stats strong {
+            display: block;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        /* Steps */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1rem;
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .step-num {
+            background: var(--primary-color);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            background: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #f8fafc;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 1.5rem;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        .icon-plus {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .icon-plus {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #cbd5e1;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                padding: 0 1rem;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                border-bottom: 1px solid var(--border-color);
+                padding: 1rem;
+                box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            }
+
+            nav.open {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .link-box {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                <span>比思社区</span>
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">最新动态</a></li>
+                    <li><a href="#">版块导航</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>比思论坛官方地址</h1>
+            <p>访问比思社区，获取最新资讯、技术交流与资源共享。请认准官方入口，保障您的账号安全。</p>
+            <div class="link-box">
+                <span>当前访问：</span>
+                <span class="url">https://www.bisi.cc</span>
+                <a href="https://www.bisi.cc" target="_blank" class="btn btn-primary" rel="nofollow">立即访问</a>
+            </div>
+        </section>
+
+        <!-- Quick Access -->
+        <section class="section-title" style="margin-top: 3rem;">
+            <span>快速访问</span>
+        </section>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">官方主页</div>
+                    <div class="card-desc">比思论坛主站，包含最新公告与热门板块。</div>
+                </div>
+                <div class="card-body">
+                    <a href="https://www.bisi.cc" target="_blank" class="btn btn-outline" style="width: 100%;">进入主站</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">手机客户端</div>
+                    <div class="card-desc">支持 iOS 与 Android 的移动端 App 下载。</div>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="btn btn-outline" style="width: 100%;">查看下载</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">用户帮助中心</div>
+                    <div class="card-desc">注册流程、积分规则及常见问题解答。</div>
+                </div>
+                <div class="card-body">
+                    <a href="#" class="btn btn-outline" style="width: 100%;">常见问题</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forum Structure -->
+        <section class="section-title" style="margin-top: 3rem;">
+            <span>热门版块</span>
+        </section>
+        <div class="forum-list">
+            <div class="forum-item">
+                <div class="forum-info">
+                    <h3>综合交流区</h3>
+                    <p>讨论论坛相关话题、生活娱乐及综合资讯。</p>
+                </div>
+                <div class="forum-stats">
+                    <strong>1,204</strong>
+                    <span>主题</span>
+                </div>
+            </div>
+            <div class="forum-item">
+                <div class="forum-info">
+                    <h3>资源分享站</h3>
+                    <p>软件工具、设计素材、学习资料等资源下载。</p>
+                </div>
+                <div class="forum-stats">
+                    <strong>8,560</strong>
+                    <span>主题</span>
+                </div>
+            </div>
+            <div class="forum-item">
+                <div class="forum-info">
+                    <h3>技术讨论区</h3>
+                    <p>前沿科技、编程开发、硬件评测与故障排查。</p>
+                </div>
+                <div class="forum-stats">
+                    <strong>3,420</strong>
+                    <span>主题</span>
+                </div>
+            </div>
+            <div class="forum-item">
+                <div class="forum-info">
+                    <h3>休闲娱乐</h3>
+                    <p>影视推荐、音乐分享、游戏攻略与动漫讨论。</p>
+                </div>
+                <div class="forum-stats">
+                    <strong>5,890</strong>
+                    <span>主题</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration Guide -->
+        <section class="section-title" style="margin-top: 3rem;">
+            <span>注册与登录指南</span>
+        </section>
+        <div class="steps-container">
+            <div class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h4>访问官方地址</h4>
+                    <p>确保您通过比思社区官方域名或正规渠道进入。请勿轻信第三方链接，谨防钓鱼网站。</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h4>完成注册流程</h4>
+                    <p>点击页面右上角的“注册”按钮，填写有效的电子邮箱或手机号，设置安全密码并完成验证。</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h4>开始社区互动</h4>
+                    <p>登录后，您可以根据兴趣加入不同的版块，发布主题、回复评论或参与每日签到活动。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <section class="section-title" style="margin-top: 3rem;">
+            <span>常见问题 (FAQ)</span>
+        </section>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                比思论坛的官方地址是什么？
+                <span class="icon-plus">+</span>
+            </div>
+            <div class="faq-answer">
+                比思论坛的官方主域名为 www.bisi.cc。建议您收藏此页面或直接访问该地址，以确保访问的是正版社区。
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                忘记密码怎么办？
+                <span class="icon-plus">+</span>
+            </div>
+            <div class="faq-answer">
+                在登录页面点击“忘记密码”，通过绑定的邮箱或手机号进行验证，即可重置您的账户密码。
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                注册需要实名认证吗？
+                <span class="icon-plus">+</span>
+            </div>
+            <div class="faq-answer">
+                根据社区管理规范，部分高级功能或发帖权限可能需要进行简单的实名信息核验，以维护社区环境。
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于比思</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">比思社区致力于为用户提供一个高效、安全、有价值的网络交流平台。我们重视每一位用户的体验。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">社区规范</a></li>
+                        <li><a href="#">联系管理员</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>官方邮箱: support@bisi.cc</li>
+                        <li>工作时间: 周一至周五 9:00-18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023-2024 比思社区. 保留所有权利.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('open');
+        }
+
+        // FAQ Accordion
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all other items
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+            });
+
+            // Toggle current item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
