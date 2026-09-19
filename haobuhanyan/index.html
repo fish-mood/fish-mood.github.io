@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="毫不汗颜提供真实、客观、无修饰的视觉体验与内容分享。在这里，我们剥离伪装，直面生活，探索那些敢于毫不汗颜展现真实自我的态度与生活方式。">
+    <meta name="keywords" content="毫不汗颜,真实分享,态度生活,无修饰">
+    <title>毫不汗颜 - 真实生活态度与无修饰分享平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #ff4757;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-sub: #747d8c;
+            --border-radius: 12px;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #e84118;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 6rem 0;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-tags {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Featured Grid */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e1e1e1;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .section-title p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-main);
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #eee;
+        }
+
+        .view-count {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            background-color: var(--card-bg);
+        }
+
+        .philosophy-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .philosophy-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .philosophy-text p {
+            color: var(--text-sub);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .feature-icon {
+            background: rgba(255, 71, 87, 0.1);
+            color: var(--accent-color);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-color);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e1e1e1;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-sub);
+            display: none;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            margin-top: 1rem;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.4);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .philosophy-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">毫不<span>汗颜</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#featured">精选内容</a></li>
+                    <li><a href="#philosophy">平台理念</a></li>
+                    <li><a href="#community">社区公约</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">加入我们</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-tags">
+                    <span class="tag">#真实</span>
+                    <span class="tag">#无修饰</span>
+                    <span class="tag">#生活态度</span>
+                </div>
+                <h1>敢于直面<br>真实的自己</h1>
+                <p>在毫不汗颜，我们相信最打动人心的力量往往来自于最朴素的真诚。拒绝滤镜，拒绝人设，在这里分享你的生活、观点与真实瞬间。</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#featured" class="btn btn-primary">开始探索</a>
+                    <a href="#philosophy" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;">了解理念</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Content -->
+        <section id="featured" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>热门话题</h2>
+                        <p>近期最受关注的真实分享与观点碰撞</p>
+                    </div>
+                    <a href="#" style="color: var(--accent-color); font-weight: 600;">查看全部 &rarr;</a>
+                </div>
+
+                <div class="grid-container">
+                    <!-- Card 1 -->
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/honest1/400/250" alt="职场真实时刻">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-meta">职场与生活</span>
+                            <h3 class="card-title">当我在周一早上拒绝内卷：一次真实的职场对话记录</h3>
+                            <p class="card-desc">分享了一次关于工作边界与自我保护的深度交流，不谈鸡汤，只谈现实。</p>
+                            <div class="card-footer">
+                                <div class="author">
+                                    <div class="author-avatar"></div>
+                                    <span>李明</span>
+                                </div>
+                                <span class="view-count">2.3k 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/honest2/400/250" alt="素颜挑战">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-meta">生活方式</span>
+                            <h3 class="card-title">30天素颜挑战：皮肤变好之前，我学会了接纳不完美</h3>
+                            <p class="card-desc">记录了卸妆后真实状态下的皮肤变化，以及心理上的巨大转变。</p>
+                            <div class="card-footer">
+                                <div class="author">
+                                    <div class="author-avatar"></div>
+                                    <span>陈晓</span>
+                                </div>
+                                <span class="view-count">5.1k 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="https://picsum.photos/seed/honest3/400/250" alt="理财真相">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-meta">理财观念</span>
+                            <h3 class="card-title">普通人如何理财：告别焦虑，坚持定投的三年总结</h3>
+                            <p class="card-desc">没有暴富神话，只有普通人的复利积累与市场波动下的心态调整。</p>
+                            <div class="card-footer">
+                                <div class="author">
+                                    <div class="author-avatar"></div>
+                                    <span>王强</span>
+                                </div>
+                                <span class="view-count">1.8k 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="section philosophy">
+            <div class="container">
+                <div class="philosophy-content">
+                    <div class="philosophy-text">
+                        <h2>为什么我们需要“毫不汗颜”？</h2>
+                        <p>在充斥着完美人设和精致摆拍的互联网时代，我们感到疲惫。毫不汗颜不仅仅是一个口号，更是一种行动指南。</p>
+                        <p>我们鼓励用户展示那些“不完美”的瞬间——深夜的焦虑、失败的尝试、真实的吐槽。因为正是这些瞬间，构成了真实且鲜活的人类经验。</p>
+                        <ul class="feature-list">
+                            <li>
+                                <div class="feature-icon">1</div>
+                                <div>
+                                    <strong>拒绝滤镜</strong>
+                                    <p style="font-size: 0.9rem; color: var(--text-sub); margin-top: 0.2rem;">所有内容均需经过平台人工或AI双重审核，确保视觉与内容的真实性。</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="feature-icon">2</div>
+                                <div>
+                                    <strong>观点自由</strong>
+                                    <p style="font-size: 0.9rem; color: var(--text-sub); margin-top: 0.2rem;">鼓励理性讨论，允许不同声音的存在，共同构建健康的表达环境。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="philosophy-image">
+                        <img src="https://picsum.photos/seed/philosophy/600/400" alt="真实生活场景" style="width: 100%; border-radius: var(--border-radius); box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>常见问题</h2>
+                        <p>关于平台规则与内容创作的解答</p>
+                    </div>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">什么样的内容会被判定为“不真实”？</div>
+                        <div class="faq-answer">
+                            我们禁止伪造新闻、摆拍虚假经历、使用AI深度伪造（Deepfake）技术生成虚假内容。对于生活分享，我们要求展示真实的个人观点和经历背景，而非无中生有的故事。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如果我的观点与他人不同，会被攻击吗？</div>
+                        <div class="faq-answer">
+                            在毫不汗颜，我们倡导理性的观点碰撞。我们支持不同意见的表达，但坚决反对人身攻击、网络暴力及恶意引战。文明表达是我们的底线。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何参与“毫无汗颜”的线下活动？</div>
+                        <div class="faq-answer">
+                            您可以关注我们的官方公告，或加入社区社群。每季度我们会举办不同主题的线下沙龙，邀请真实故事分享者面对面交流。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">毫不<span>汗颜</span></a>
+                    <p>一个致力于还原真实、鼓励真诚表达的数字社区。在这里，真实比完美更有力量。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台愿景</a></li>
+                        <li><a href="#">团队介绍</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>内容频道</h4>
+                    <ul>
+                        <li><a href="#">职场观察</a></li>
+                        <li><a href="#">生活记录</a></li>
+                        <li><a href="#">观点讨论</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">用户协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">内容举报</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 毫不汗颜平台. 保留所有权利.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
