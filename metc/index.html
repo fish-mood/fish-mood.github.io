@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>metcn人体模特邓晶-专业艺术摄影与人体美学作品展示</title>
+    <meta name="description" content="metcn人体模特邓晶官方网站，展示专业人体摄影艺术作品、模特档案及艺术创作理念。提供高清作品浏览、作品集介绍及艺术交流服务。">
+    <meta name="keywords" content="metcn人体模特邓晶,邓晶,人体模特,人体摄影,艺术写真,metcn">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #d4a373;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 15px auto 0;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 85vh;
+            min-height: 600px;
+            background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url('https://picsum.photos/seed/dengjing/1920/1080');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--accent-color);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b88d5f;
+            transform: translateY(-2px);
+        }
+
+        /* Profile Section */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .profile-img {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .profile-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .profile-info .tagline {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .profile-info p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        .stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .stat-item h4 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .stat-item span {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            cursor: pointer;
+            background-color: #eee;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-overlay span {
+            color: #fff;
+            font-weight: 600;
+            border: 1px solid #fff;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Portfolio Categories */
+        .portfolio-categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 8px 20px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .category-btn.active, .category-btn:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 20px;
+            padding: 60px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 6px;
+            border: 1px solid #444;
+            background-color: rgba(255,255,255,0.05);
+            color: #fff;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #888;
+            padding: 60px 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .profile-grid, .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-wrapper {
+                padding: 30px 20px;
+            }
+
+            .section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">metcn<span>邓晶</span></a>
+            <nav class="nav-links">
+                <a href="#home" class="active">首页</a>
+                <a href="#about">关于模特</a>
+                <a href="#gallery">作品展示</a>
+                <a href="#services">合作服务</a>
+                <a href="#contact">联系方式</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>metcn人体模特邓晶</h1>
+                <p>探索人体美学，展现自然与艺术的完美融合。专业摄影合作，传递极致视觉体验。</p>
+                <a href="#gallery" class="btn">浏览作品集</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="profile-grid">
+                    <div class="profile-img">
+                        <img src="https://picsum.photos/seed/model_dengjing/600/800" alt="metcn人体模特邓晶写真">
+                    </div>
+                    <div class="profile-info">
+                        <span class="tagline">专业艺术人体模特 / 形体艺术家</span>
+                        <h2>关于邓晶</h2>
+                        <p>metcn人体模特邓晶，专注于人体艺术摄影领域。她以自然、健康、大气的风格著称，擅长通过肢体语言表达情感与意境。在拍摄过程中，她注重与摄影师的配合，能够准确捕捉光影下的瞬间美感，为作品注入生命力。</p>
+                        <p>邓晶具备专业的形体管理经验，拥有优美的线条和良好的镜头感。无论是静态的肢体造型，还是动态的肢体表现，都能展现出独特的艺术魅力。她的作品涵盖光影摄影、情绪人像及艺术写真等多种形式，深受广大摄影爱好者和艺术家的喜爱。</p>
+                        <div class="stats">
+                            <div class="stat-item">
+                                <h4>5+</h4>
+                                <span>年从业经验</span>
+                            </div>
+                            <div class="stat-item">
+                                <h4>200+</h4>
+                                <span>合作摄影作品</span>
+                            </div>
+                            <div class="stat-item">
+                                <h4>50+</h4>
+                                <span>合作摄影师</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section" style="background-color: #fff;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">精选作品集</h2>
+                    <p class="section-subtitle">精选邓晶历年优秀摄影作品，展现不同风格与主题的艺术魅力</p>
+                </div>
+
+                <div class="portfolio-categories">
+                    <button class="category-btn active">全部作品</button>
+                    <button class="category-btn">光影系列</button>
+                    <button class="category-btn">艺术写真</button>
+                    <button class="category-btn">情绪表达</button>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art1/400/600" alt="邓晶人体摄影作品">
+                        <div class="gallery-overlay"><span>查看详情</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art2/400/600" alt="邓晶人体摄影作品">
+                        <div class="gallery-overlay"><span>查看详情</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art3/400/600" alt="邓晶人体摄影作品">
+                        <div class="gallery-overlay"><span>查看详情</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art4/400/600" alt="邓晶人体摄影作品">
+                        <div class="gallery-overlay"><span>查看详情</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art5/400/600" alt="邓晶人体摄影作品">
+                        <div class="gallery-overlay"><span>查看详情</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art6/400/600" alt="邓晶人体摄影作品">
+                        <div class="gallery-overlay"><span>查看详情</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art7/400/600" alt="邓晶人体摄影作品">
+                        <div class="gallery-overlay"><span>查看详情</span></div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://picsum.photos/seed/art8/400/600" alt="邓晶人体摄影作品">
+                        <div class="gallery-overlay"><span>查看详情</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">合作服务</h2>
+                    <p class="section-subtitle">提供专业的模特服务，满足各类摄影与艺术创作需求</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📷</div>
+                        <h3>商业摄影</h3>
+                        <p>为广告、杂志、画册提供专业的商业模特服务，确保拍摄效果符合品牌调性。</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🎨</div>
+                        <h3>艺术写真</h3>
+                        <p>专注于人体艺术摄影，探索光影与线条的结合，打造极具艺术感染力的个人写真。</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">✨</div>
+                        <h3>形体指导</h3>
+                        <p>提供专业的形体管理建议与指导，帮助模特优化体态，提升镜头表现力。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <h3>联系合作</h3>
+                        <p>如果您对邓晶的人体模特服务感兴趣，或希望预约拍摄合作，请通过以下方式联系我们。</p>
+                        <br>
+                        <p>📧 邮箱: contact@metcn-dengjing.com</p>
+                        <p>📱 电话: 138-xxxx-xxxx</p>
+                        <p>📍 工作地点: 北京/上海/线上远程</p>
+                        <br>
+                        <p style="font-size: 0.9rem; opacity: 0.6;">* 商业合作请提前预约档期，感谢理解。</p>
+                    </div>
+                    <div class="contact-form">
+                        <form onsubmit="event.preventDefault(); alert('感谢您的留言，我们会尽快与您联系。');">
+                            <div class="form-group">
+                                <input type="text" placeholder="您的姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="联系邮箱" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="合作类型（如：商业摄影、艺术写真）">
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="请简述您的拍摄需求或留言内容..."></textarea>
+                            </div>
+                            <button type="submit" class="btn" style="width: 100%;">发送留言</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>metcn邓晶</h4>
+                    <p>专注于人体美学与艺术摄影的展示平台。<br>专业、自然、纯粹。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#about">关于模特</a></li>
+                        <li><a href="#gallery">作品集</a></li>
+                        <li><a href="#contact">合作咨询</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务类型</h4>
+                    <ul>
+                        <li><a href="#">商业广告</a></li>
+                        <li><a href="#">杂志拍摄</a></li>
+                        <li><a href="#">艺术写真</a></li>
+                        <li><a href="#">形体指导</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 metcn人体模特邓晶. All Rights Reserved. 仅供展示与交流使用。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的交互脚本：平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 更新导航激活状态
+                    document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // 分类按钮交互
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                // 这里可以添加实际的数据过滤逻辑
+            });
+        });
+    </script>
+</body>
+                  </html>
