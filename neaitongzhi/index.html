@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="虐爱同志网提供深度、细腻的同志情感文学与故事阅读，涵盖复杂情感纠葛、人性探讨与心灵治愈，为同志群体提供情感共鸣与精神栖息地。">
+    <meta name="keywords" content="虐爱同志网,同志文学,情感故事,耽美小说,情感共鸣,同志心理">
+    <title>虐爱同志网-深度情感故事与同志文学阅读平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --text-color: #333;
+            --text-light: #666;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-color);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            outline: none;
+            width: 200px;
+        }
+
+        .search-bar button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .cat-tag {
+            padding: 8px 20px;
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .cat-tag:hover, .cat-tag.active {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        /* Main Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Article List */
+        .article-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            display: flex;
+            gap: 20px;
+            transition: transform 0.2s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .card-thumb {
+            width: 200px;
+            height: 140px;
+            background-color: #eee;
+            border-radius: 4px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .card-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #ddd;
+        }
+
+        .btn {
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .widget {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .rank-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f5f5f5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rank-list li:last-child {
+            border-bottom: none;
+        }
+
+        .rank-num {
+            font-weight: bold;
+            color: #999;
+            margin-right: 10px;
+        }
+
+        .rank-num.top-1 { color: #f1c40f; }
+        .rank-num.top-2 { color: #e67e22; }
+        .rank-num.top-3 { color: #d35400; }
+
+        .rank-name {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Features Section */
+        .features {
+            background: white;
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-item i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .article-card {
+                flex-direction: column;
+            }
+
+            .card-thumb {
+                width: 100%;
+                height: 200px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>虐爱</span>同志网
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">情感故事</a></li>
+                    <li><a href="#">深度专栏</a></li>
+                    <li><a href="#">原创文学</a></li>
+                    <li><a href="#">互助社区</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="搜索故事或关键词...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>在错位的时间相遇</h1>
+            <p>这里有最真实的同志情感纠葛，最细腻的内心独白，以及那些无法言说的爱与痛。我们致力于为同志群体提供情感共鸣与精神栖息地。</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Filters -->
+        <div class="categories">
+            <div class="cat-tag active">全部推荐</div>
+            <div class="cat-tag">虐恋情深</div>
+            <div class="cat-tag">现实向</div>
+            <div class="cat-tag">都市情感</div>
+            <div class="cat-tag">救赎向</div>
+            <div class="cat-tag">短篇故事</div>
+        </div>
+
+        <div class="content-grid">
+            <!-- Left Column: Content -->
+            <section class="article-list">
+                <article class="article-card">
+                    <div class="card-thumb">
+                        <img src="https://picsum.photos/seed/love1/400/300" alt="文章封面">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <div class="card-meta">情感故事 · 3小时前 · 阅读 1.2w</div>
+                            <h2 class="card-title">那年雨季，我们错过的拥抱</h2>
+                            <p class="card-excerpt">他在那个雨夜离开，没有回头，只留给我一个决绝的背影。多年后重逢，我们之间隔着的不仅仅是时间，还有无法跨越的世俗与谎言...</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="author-info">
+                                <div class="avatar"></div>
+                                <span>作者：北风过境</span>
+                            </div>
+                            <button class="btn btn-outline">阅读全文</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="card-thumb">
+                        <img src="https://picsum.photos/seed/love2/400/300" alt="文章封面">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <div class="card-meta">深度专栏 · 昨天 · 阅读 8560</div>
+                            <h2 class="card-title">隐秘的角落：同志情感中的自我认同</h2>
+                            <p class="card-excerpt">在这个看似开放的时代，许多同志依然活在隐秘的角落。本文探讨了如何在复杂的情感关系中保持自我，如何面对内心的恐惧与渴望...</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="author-info">
+                                <div class="avatar"></div>
+                                <span>作者：心灵驿站</span>
+                            </div>
+                            <button class="btn btn-outline">阅读全文</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="card-thumb">
+                        <img src="https://picsum.photos/seed/love3/400/300" alt="文章封面">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <div class="card-meta">原创文学 · 2天前 · 阅读 5400</div>
+                            <h2 class="card-title">玻璃渣里的糖：关于爱与救赎</h2>
+                            <p class="card-excerpt">他曾经是那么信任我，最后却亲手将我推入深渊。如果爱是折磨，那我甘之如饴。这是一段关于背叛、悔恨与最终和解的故事...</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="author-info">
+                                <div class="avatar"></div>
+                                <span>作者：墨色微凉</span>
+                            </div>
+                            <button class="btn btn-outline">阅读全文</button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="card-thumb">
+                        <img src="https://picsum.photos/seed/love4/400/300" alt="文章封面">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <div class="card-meta">情感故事 · 3天前 · 阅读 9200</div>
+                            <h2 class="card-title">如果不曾遇见你</h2>
+                            <p class="card-excerpt">有些故事没有结局，就像有些人注定只能陪你走一段路。我们在彼此的生命里留下了痕迹，然后各自奔向不同的方向...</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="author-info">
+                                <div class="avatar"></div>
+                                <span>作者：深海鱼</span>
+                            </div>
+                            <button class="btn btn-outline">阅读全文</button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Right Column: Sidebar -->
+            <aside>
+                <div class="widget">
+                    <h3 class="widget-title">本周热门</h3>
+                    <ul class="rank-list">
+                        <li>
+                            <span class="rank-num top-1">1</span>
+                            <span class="rank-name">破镜重圆：迟来的深情</span>
+                        </li>
+                        <li>
+                            <span class="rank-num top-2">2</span>
+                            <span class="rank-name">禁忌之恋：无法言说的秘密</span>
+                        </li>
+                        <li>
+                            <span class="rank-num top-3">3</span>
+                            <span class="rank-name">单身生活：一个人的自由与孤独</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">4</span>
+                            <span class="rank-name">前任的婚礼：我去还是不去</span>
+                        </li>
+                        <li>
+                            <span class="rank-num">5</span>
+                            <span class="rank-name">深夜电台：听我讲讲那些年</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">情感专栏</h3>
+                    <ul class="rank-list">
+                        <li><a href="#">如何在同志关系中建立安全感</a></li>
+                        <li><a href="#">关于出柜：给勇敢者的建议</a></li>
+                        <li><a href="#">异地恋：距离与信任的博弈</a></li>
+                        <li><a href="#">中年同志的情感困境与出路</a></li>
+                        <li><a href="#">如何处理情感中的控制欲</a></li>
+                    </ul>
+                </div>
+
+                <div class="widget" style="background-color: #fdf2f2; border: 1px solid #fadbd8;">
+                    <h3 class="widget-title" style="color: #c0392b;">作者招募</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 15px;">无论你是资深写手还是新手，这里都有你的舞台。分享你的故事，连接更多同路人。</p>
+                    <button class="btn" style="width: 100%; background-color: #c0392b; color: white;">立即投稿</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i>❤</i>
+                    <h3>真实情感共鸣</h3>
+                    <p>收录大量真实的同志情感经历，让你不再孤单。</p>
+                </div>
+                <div class="feature-item">
+                    <i>✍</i>
+                    <h3>原创文学创作</h3>
+                    <p>汇聚优秀创作者，提供高质量的原创故事与文章。</p>
+                </div>
+                <div class="feature-item">
+                    <i>🤝</i>
+                    <h3>互助社区交流</h3>
+                    <p>安全、私密、包容的交流环境，分享生活点滴。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">虐爱同志网是一个专注于同志群体情感交流与文学创作的平台。我们致力于提供一个真实、温暖、包容的网络空间，陪伴每一位用户走过情感的旅程。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>栏目导航</h4>
+                    <ul>
+                        <li><a href="#">情感故事</a></li>
+                        <li><a href="#">深度专栏</a></li>
+                        <li><a href="#">原创文学</a></li>
+                        <li><a href="#">互助问答</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>友情链接</h4>
+                    <ul>
+                        <li><a href="#">同志公益组织</a></li>
+                        <li><a href="#">同志健康资讯</a></li>
+                        <li><a href="#">同志影视鉴赏</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>投稿邮箱：editor@niubi.com</li>
+                        <li>商务合作：bd@niubi.com</li>
+                        <li>工作时间：9:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 虐爱同志网 版权所有. | 青年网络文明公约 | 未成年人模式</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
